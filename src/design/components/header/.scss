@@ -1,0 +1,10 @@
+@import 'color';
+
+.ui-header {
+  background-color: $color-core-foreground;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
+  overflow: hidden;
+}

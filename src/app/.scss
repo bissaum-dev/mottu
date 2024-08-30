@@ -1,0 +1,6 @@
+@import 'color', 'measure';
+
+.app-root header {
+  background-color: $color-core-foreground;
+  height: $measure-sizing-huge;
+}
