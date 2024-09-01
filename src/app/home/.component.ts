@@ -10,7 +10,7 @@ import { EmptyComponent } from '@/components/empty/.component';
 import { CardComponent } from '@/components/card/.component';
 import { Service } from '@/services/index';
 import { CharacterOptions, CharacterSchema } from '@/app/.types';
-import { addFavorites, removeFavorites } from '@/stores/Characters/.actions';
+import { AddFavorites, RemoveFavorites } from '@/stores/Characters/.actions';
 
 @Component({
   selector: 'app-home',
@@ -63,9 +63,9 @@ export class HomeApp {
 
   setFavorite(hasFavorite: boolean, item: CharacterSchema) {
     if(hasFavorite) {
-      this.store.dispatch(addFavorites({ item }));
+      this.store.dispatch(AddFavorites({ item }));
     } else {
-      this.store.dispatch(removeFavorites({ item }));
+      this.store.dispatch(RemoveFavorites({ item }));
     }
   }
 }

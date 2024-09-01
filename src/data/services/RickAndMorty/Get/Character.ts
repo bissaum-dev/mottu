@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Services, CharacterSchema } from '@/app/.types';
-import { RickAndMorty } from '..';
+import { RickAndMorty } from '@/services/RickAndMorty';
 
 interface Args {
   type: Services

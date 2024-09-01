@@ -9,7 +9,7 @@ import { SearchComponent } from '@/components/search/.component';
 import { EmptyComponent } from '@/components/empty/.component';
 import { CardComponent } from '@/components/card/.component';
 import { CharacterSchema } from '@/app/.types';
-import { addFavorites, removeFavorites } from '@/stores/Characters/.actions';
+import { AddFavorites, RemoveFavorites } from '@/stores/Characters/.actions';
 
 @Component({
   selector: 'app-root',
@@ -27,9 +27,9 @@ export class FavoritesApp {
 
   setFavorite(hasFavorite: boolean, item: CharacterSchema) {
     if(hasFavorite) {
-      this.store.dispatch(addFavorites({ item }));
+      this.store.dispatch(AddFavorites({ item }));
     } else {
-      this.store.dispatch(removeFavorites({ item }));
+      this.store.dispatch(RemoveFavorites({ item }));
     }
   }
 }

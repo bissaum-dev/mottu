@@ -1,9 +1,9 @@
-import { Pages } from '@/app/.types';
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { Pages } from '@/app/.types';
 
 @Component({
   selector: 'ui-search',

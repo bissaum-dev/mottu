@@ -1,4 +1,4 @@
-import { Character } from './Get/Character';
+import { Character } from '@/services/RickAndMorty/Get/Character';
 
 export const RickAndMorty = {
   GraphQL: 'https://rickandmortyapi.com/graphql',

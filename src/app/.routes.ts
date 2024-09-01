@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeApp } from './home/.component';
-import { FavoritesApp } from './favorites/.component';
+import { HomeApp } from '@/app/home/.component';
+import { FavoritesApp } from '@/app/favorites/.component';
 
 export const RoutesApp: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
