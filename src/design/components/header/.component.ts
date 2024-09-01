@@ -9,6 +9,4 @@ import { MenuComponent } from '@/components/menu/.component';
   templateUrl: './.html',
   styleUrl: './.scss'
 })
-export class HeaderComponent {
-  name = 'Header';
-}
+export class HeaderComponent {}

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonComponent } from '@/components/button/.component';
-
-type MenuItem = 'inicio' | 'favoritos'
+import { Pages } from '@/app/.types'
 
 @Component({
   selector: 'ui-menu',
@@ -11,29 +11,26 @@ type MenuItem = 'inicio' | 'favoritos'
   styleUrl: './.scss'
 })
 export class MenuComponent {
-  isActive: Record<MenuItem, boolean> = {
-    inicio: true,
-    favoritos: false
-  };
+  constructor(private router: Router) {}
 
-  setActive(item: MenuItem) {
+  ngOnInit() {
+    this.setActive(this.router.url as Pages);
+  }
+
+  isActive: Record<Pages, boolean> = {
+    '/home': false,
+    '/favorites': false
+  }
+
+  setActive(item: Pages) {
     Object.entries(this.isActive).forEach(([key, _value]) => {
-      this.isActive[key as MenuItem] = false;
+      this.isActive[key as Pages] = false;
     });
     this.isActive[item] = !this.isActive[item];
   }
 
-  goTo(item: MenuItem) {
+  goTo(item: Pages) {
     this.setActive(item);
-
-    switch(item) {
-      case 'inicio':
-        console.log(1);
-        break;
-
-      case 'favoritos':
-        console.log(2);
-        break;
-    }
+    this.router.navigate([`/${item}`]);
   }
 }

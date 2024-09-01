@@ -1,7 +1,7 @@
 <div class="ui-menu">
   <div class="btn-group">
-    <ui-button label="Início" icon="fa-house" (click)="goTo('inicio')" [active]="isActive.inicio" />
-    <ui-button label="Favoritos" icon="fa-heart" (click)="goTo('favoritos')" [active]="isActive.favoritos"
+    <ui-button label="Início" icon="fa-house" (click)="goTo('/home')" [active]="isActive['/home']" />
+    <ui-button label="Favoritos" icon="fa-heart" (click)="goTo('/favorites')" [active]="isActive['/favorites']"
       [count]="3" />
   </div>
 </div>

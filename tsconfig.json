@@ -24,6 +24,9 @@
       "dom"
     ],
     "paths": {
+      "@/app/*": [
+        "./src/app/*"
+      ],
       "@/components/*": [
         "./src/design/components/*"
       ]

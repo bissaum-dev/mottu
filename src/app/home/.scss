@@ -1,0 +1,90 @@
+@import 'color', 'measure', 'grid';
+
+.app-home {
+  &> header {
+    background-color: $color-core-foreground;
+    height: $measure-sizing-huge;
+  }
+
+  @media (max-width: $grid-breakpoint-sm) {
+    &> header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  main header {
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    margin: $measure-spacing-xxxl 0;
+    background-color: $color-core-background;
+  }
+
+  @media (max-width: $grid-breakpoint-md) {
+    main header {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: $grid-breakpoint-sm) {
+    main header {
+      position: fixed;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      z-index: 1;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 0 100px $color-core-foreground;
+    }
+  }
+
+  main section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+  }
+
+  @media (max-width: $grid-breakpoint-md) {
+    main section {
+      padding: 0 20px;
+
+      ui-card {
+        width: 30%;
+      }
+    }
+  }
+
+  @media (max-width: $grid-breakpoint-sm) {
+    main section {
+      margin-top: 250px;
+      padding: 0 20px;
+      justify-content: space-between;
+
+      ui-card {
+        width: 46%;
+      }
+    }
+  }
+
+  @media (max-width: 360px) {
+    main section {
+
+      ui-card {
+        width: 100%;
+      }
+    }
+  }
+}

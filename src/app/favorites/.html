@@ -1,0 +1,37 @@
+<div class="app-favorites">
+  <header>
+    <ui-header />
+  </header>
+
+  <main>
+    <header>
+      <ui-heading text="Início" />
+      <ui-search label="Pesquisar" />
+    </header>
+
+    <section>
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
+      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
+    </section>
+    <!--
+    <section>
+      <ui-empty heading="Nada foi encontrado" text="Tente realizar uma nova busca." />
+    </section> -->
+  </main>
+</div>
+
+<router-outlet />
