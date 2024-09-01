@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { HeaderComponent } from '@/components/header/.component';
 import { HeadingComponent } from '@/components/heading/.component';
 import { SearchComponent } from '@/components/search/.component';
@@ -8,6 +10,7 @@ import { EmptyComponent } from '@/components/empty/.component';
 import { CardComponent } from '@/components/card/.component';
 import { Service } from '@/services/index';
 import { CharacterOptions, CharacterSchema } from '@/app/.types';
+import { addFavorites, removeFavorites } from '@/stores/Characters/.actions';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +20,12 @@ import { CharacterOptions, CharacterSchema } from '@/app/.types';
   styleUrl: './.scss'
 })
 export class HomeApp {
+  Favorites$: Observable<CharacterSchema[]>
   Characters = [] as CharacterSchema[]
+
+  constructor(private store: Store<{ favorite: CharacterSchema[] }>) {
+    this.Favorites$ = store.select('favorite');
+  }
 
   private CharactersOption: CharacterOptions = {
     type: 'GraphQL',
@@ -53,7 +61,11 @@ export class HomeApp {
     this.Characters = List;
   }
 
-  setFavorite(hasFavorite: boolean) {
-    console.log(hasFavorite)
+  setFavorite(hasFavorite: boolean, item: CharacterSchema) {
+    if(hasFavorite) {
+      this.store.dispatch(addFavorites({ item }));
+    } else {
+      this.store.dispatch(removeFavorites({ item }));
+    }
   }
 }

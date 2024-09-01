@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ButtonComponent } from '@/components/button/.component';
-import { Pages } from '@/app/.types'
+import { Pages, CharacterSchema } from '@/app/.types';
 
 @Component({
   selector: 'ui-menu',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './.html',
   styleUrl: './.scss'
 })
 export class MenuComponent {
-  constructor(private router: Router) {}
+  Favorites: Observable<CharacterSchema[]>
+
+  constructor(private router: Router, private store: Store<{ favorite: CharacterSchema[] }>) {
+    this.Favorites = store.select('favorite');
+  }
 
   ngOnInit() {
     this.setActive(this.router.url as Pages);

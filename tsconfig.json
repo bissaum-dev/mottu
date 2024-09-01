@@ -30,6 +30,9 @@
       "@/components/*": [
         "./src/design/components/*"
       ],
+      "@/stores/*": [
+        "./src/stores/*"
+      ],
       "@/services/*": [
         "./src/services/*"
       ],

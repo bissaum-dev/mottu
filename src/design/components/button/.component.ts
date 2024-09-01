@@ -12,7 +12,7 @@ export class ButtonComponent {
   @Input() label = 'Click me';
   @Input() active = false;
   @Input() icon = '';
-  @Input() count = 0;
+  @Input() count: number | undefined = 0;
   @Output() onClick = new EventEmitter();
 
   handleClick() {

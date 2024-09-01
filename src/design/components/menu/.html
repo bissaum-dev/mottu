@@ -2,6 +2,6 @@
   <div class="btn-group">
     <ui-button label="Início" icon="fa-house" (click)="goTo('/home')" [active]="isActive['/home']" />
     <ui-button label="Favoritos" icon="fa-heart" (click)="goTo('/favorites')" [active]="isActive['/favorites']"
-      [count]="3" />
+      [count]="(Favorites | async)?.length" />
   </div>
 </div>

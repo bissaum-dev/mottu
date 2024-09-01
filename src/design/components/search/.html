@@ -1,5 +1,5 @@
-<div class="ui-search">
+<div *ngIf="showSearch" class="ui-search">
   <input id="inputSearch" #inputSearch class="form-control form-control-lg" type="text" [placeholder]="label"
-    (input)="onInput(inputSearch.value)" />
+    autocomplete="off" (input)="onInput(inputSearch.value)" />
   <label for="inputSearch">{{ label }}</label>
 </div>

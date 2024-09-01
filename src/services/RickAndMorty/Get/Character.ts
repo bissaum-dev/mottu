@@ -15,6 +15,7 @@ export const Character = async ({ type, page, search }: Args): Promise<Character
         query {
           characters(page: ${page}, filter: { name: "${search}" }) {
             results {
+              id
               name
               species
               image
