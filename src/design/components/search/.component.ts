@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ui-search',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './.scss'
 })
 export class SearchComponent {
-  name = 'Search';
+  @Input() label = 'Search';
 }

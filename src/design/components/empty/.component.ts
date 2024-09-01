@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ui-empty',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './.scss'
 })
 export class EmptyComponent {
-  name = 'Empty';
+  @Input() heading = '';
+  @Input() text = '';
 }

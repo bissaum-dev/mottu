@@ -1,5 +1,7 @@
-<div class="menu">
-  <div class="content">
-    <p>Menu</p>
+<div class="ui-menu">
+  <div class="btn-group">
+    <ui-button label="Início" icon="fa-house" (click)="goTo('inicio')" [active]="isActive.inicio" />
+    <ui-button label="Favoritos" icon="fa-heart" (click)="goTo('favoritos')" [active]="isActive.favoritos"
+      [count]="3" />
   </div>
 </div>

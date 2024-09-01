@@ -1,0 +1,39 @@
+@import 'color', 'grid';
+
+.ui-button {
+  border: 0;
+  color: $color-neutral-content;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 0;
+
+  &.active,
+  &:hover {
+    border-color: $color-neutral-surface;
+    color: $color-neutral-content-onSource;
+    background-color: $color-neutral-surface;
+
+    .badge {
+      color: $color-neutral-surface !important;
+      background-color: $color-neutral-content-onSource !important;
+    }
+  }
+
+  svg {
+    margin-right: 6px;
+  }
+
+  .badge {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    margin-left: 6px;
+    background-color: $color-neutral-surface !important;
+  }
+
+  @media (max-width: $grid-breakpoint-sm) {
+    .label {
+      display: none;
+    }
+  }
+}

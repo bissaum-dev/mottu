@@ -1,0 +1,12 @@
+@import 'color';
+
+.ui-menu {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .btn-group {
+    border: 1px solid $color-neutral-content;
+    overflow: hidden;
+  }
+}

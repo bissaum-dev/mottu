@@ -1,0 +1,5 @@
+<button type="button" class="ui-button btn btn-outline-primary" [ngClass]="{'active': active}" (click)="handleClick()">
+  <i *ngIf="icon" class="fa-solid" [ngClass]="icon"></i>
+  <span class="label">{{ label }}</span>
+  <span *ngIf="count > 0" class="badge rounded-pill text-bg-light">{{ count }}</span>
+</button>

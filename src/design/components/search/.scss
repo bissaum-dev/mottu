@@ -1,0 +1,52 @@
+@import 'color', 'grid';
+
+.ui-search {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+
+  label {
+    background-color: $color-core-background;
+    padding: 0 5px;
+    color: $color-neutral-content;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    position: relative;
+    left: 12px;
+    top: -40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .05s linear;
+  }
+
+  input {
+    width: 328px;
+    border-color: $color-neutral-content;
+    background-color: $color-core-background;
+    color: $color-neutral-content-high;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+
+    &:not(:placeholder-shown) + label {
+      top: -50px;
+      opacity: 1;
+    }
+
+    &::placeholder {
+      color: $color-neutral-content;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 .25rem $color-core-background;
+    }
+  }
+
+  @media (max-width: $grid-breakpoint-sm) {
+    input {
+      width: 100%;
+    }
+  }
+}
