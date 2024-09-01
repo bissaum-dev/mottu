@@ -1,6 +1,9 @@
 @import 'color', 'measure', 'grid';
 
 .app-home {
+  overflow-y: auto;
+  height: 100vh;
+
   &> header {
     background-color: $color-core-foreground;
     height: $measure-sizing-huge;
@@ -41,7 +44,7 @@
       top: 15px;
       left: 0;
       width: 100%;
-      height: 160px;
+      height: 80px;
       z-index: 1;
       flex-direction: column;
       padding: 20px;
@@ -55,11 +58,23 @@
     gap: 24px;
     flex-wrap: wrap;
     padding-bottom: 24px;
+
+    ui-empty {
+      display: none;
+    }
+
+    &.is-empty {
+      display: block;
+
+      ui-empty {
+        display: block;
+      }
+    }
   }
 
   @media (max-width: $grid-breakpoint-md) {
     main section {
-      padding: 0 20px;
+      padding: 0 20px 24px 20px;
 
       ui-card {
         width: 30%;
@@ -69,8 +84,7 @@
 
   @media (max-width: $grid-breakpoint-sm) {
     main section {
-      margin-top: 250px;
-      padding: 0 20px;
+      margin-top: 165px;
       justify-content: space-between;
 
       ui-card {

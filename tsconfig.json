@@ -29,6 +29,12 @@
       ],
       "@/components/*": [
         "./src/design/components/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
       ]
     }
   },

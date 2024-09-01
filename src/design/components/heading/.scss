@@ -1,3 +1,5 @@
+@import 'grid';
+
 .ui-heading {
   position: relative;
   top: 50%;
@@ -8,4 +10,10 @@
   font-weight: 400px;
   font-size: 48px;
   color: #00B5CC;
+}
+
+@media (max-width: $grid-breakpoint-sm) {
+  .ui-heading {
+    display: none;
+  }
 }

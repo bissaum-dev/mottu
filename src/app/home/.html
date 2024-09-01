@@ -1,4 +1,4 @@
-<div class="app-home">
+<div class="app-home" (scroll)="onScroll($event)">
   <header>
     <ui-header />
   </header>
@@ -6,31 +6,14 @@
   <main>
     <header>
       <ui-heading text="Início" />
-      <ui-search label="Pesquisar" />
+      <ui-search label="Pesquisar" (inputSearch)="onSearch($event)" />
     </header>
 
-    <section>
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="true" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
-        [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
-      <ui-card image="https://rickandmortyapi.com/api/character/avatar/1.jpeg" name="Rick Sanchez" species="Human"
+    <section [ngClass]="{'is-empty': Characters.length < 1}">
+      <ui-empty heading="Nada foi encontrado" text="Tente realizar uma nova busca" />
+      <ui-card *ngFor="let item of Characters" [image]="item.image" [name]="item.name" [species]="item.species"
         [isFavorite]="false" (changeFavorite)="setFavorite($event)" />
     </section>
-    <!--
-    <section>
-      <ui-empty heading="Nada foi encontrado" text="Tente realizar uma nova busca." />
-    </section> -->
   </main>
 </div>
 
