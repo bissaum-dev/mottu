@@ -7,6 +7,7 @@ export interface CharacterSchema {
   name: string
   species: string
   image: string
+  favorite: boolean
 }
 
 export interface CharacterOptions {

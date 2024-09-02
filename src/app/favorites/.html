@@ -9,10 +9,10 @@
       <ui-search label="Pesquisar" />
     </header>
 
-    <section [ngClass]="{'is-empty': (Favorites | async)?.length === 0}">
+    <section [ngClass]="{'is-empty': (Favorites$ | async)?.length === 0}">
       <ui-empty heading="Parece que você ainda não tem favoritos"
         text="Volte à página inicial e escolha os melhores para você" />
-      <ui-card *ngFor="let item of Favorites | async" [image]="item.image" [name]="item.name" [species]="item.species"
+      <ui-card *ngFor="let item of Favorites$ | async" [image]="item.image" [name]="item.name" [species]="item.species"
         [isFavorite]="true" (changeFavorite)="setFavorite($event, item)" />
     </section>
   </main>

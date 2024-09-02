@@ -14,10 +14,10 @@ import { Pages, CharacterSchema } from '@/app/.types';
   styleUrl: './.scss'
 })
 export class MenuComponent {
-  Favorites: Observable<CharacterSchema[]>
+  Favorites$: Observable<CharacterSchema[]>
 
   constructor(private router: Router, private store: Store<{ favorite: CharacterSchema[] }>) {
-    this.Favorites = store.select('favorite');
+    this.Favorites$ = store.select('favorite');
   }
 
   ngOnInit() {

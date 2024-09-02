@@ -12,7 +12,7 @@
     <section [ngClass]="{'is-empty': Characters.length < 1}">
       <ui-empty heading="Nada foi encontrado" text="Tente realizar uma nova busca" />
       <ui-card *ngFor="let item of Characters" [image]="item.image" [name]="item.name" [species]="item.species"
-        [isFavorite]="false" (changeFavorite)="setFavorite($event, item)" />
+        [isFavorite]="hasFavorite((Favorites$ | async), item.id)" (changeFavorite)="setFavorite($event, item)" />
     </section>
   </main>
 </div>

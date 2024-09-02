@@ -19,10 +19,10 @@ import { AddFavorites, RemoveFavorites } from '@/stores/Characters/.actions';
   styleUrl: './.scss'
 })
 export class FavoritesApp {
-  Favorites: Observable<CharacterSchema[]>
+  Favorites$: Observable<CharacterSchema[]>
 
   constructor(private store: Store<{ favorite: CharacterSchema[] }>) {
-    this.Favorites = store.select('favorite');
+    this.Favorites$ = store.select('favorite');
   }
 
   setFavorite(hasFavorite: boolean, item: CharacterSchema) {

@@ -61,6 +61,10 @@ export class HomeApp {
     this.Characters = List;
   }
 
+  hasFavorite(favorites: CharacterSchema[] | null, id: string) {
+    return !!favorites?.some(fav => fav.id === id)
+  }
+
   setFavorite(hasFavorite: boolean, item: CharacterSchema) {
     if(hasFavorite) {
       this.store.dispatch(AddFavorites({ item }));
