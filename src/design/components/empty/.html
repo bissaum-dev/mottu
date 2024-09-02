@@ -2,5 +2,6 @@
   <div class="message">
     <h2>{{ heading }}</h2>
     <p>{{ text }}</p>
+    <button *ngIf="button && link" type="button" class="btn btn-light" (click)="goTo(link)">{{ button }}</button>
   </div>
 </div>

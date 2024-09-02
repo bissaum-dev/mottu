@@ -1,11 +1,11 @@
-<div class="ui-card">
-  <button *ngIf="!isFavorite" type="button" (click)="toggleFavorite()">
-    <i class="fa-regular fa-heart"></i>
-  </button>
-  <button *ngIf="isFavorite" type="button" class="favorite" (click)="toggleFavorite()">
+<button class="ui-card" type="button" (click)="toggleFavorite()">
+  <div *ngIf="isFavorite" class="ui-favorite active">
     <i class="fa-solid fa-heart"></i>
-  </button>
+  </div>
+  <div *ngIf="!isFavorite" class="ui-favorite">
+    <i class="fa-regular fa-heart"></i>
+  </div>
   <img [src]="image" [alt]="name" />
   <h5>{{ name }}</h5>
   <p>{{ species }}</p>
-</div>
+</button>

@@ -7,16 +7,16 @@
   overflow: hidden;
   background-color: $color-core-foreground;
   border: 1px solid $color-core-border;
+  padding: 0;
 
   @media (max-width: $grid-breakpoint-md) {
     width: 100%;
   }
 
-  button {
+  .ui-favorite {
     position: absolute;
     top: -40px;
     right: -40px;
-    border: 0;
     padding: 50px 50px 15px 15px;
     border-radius: 100px;
     background-color: transparent;
@@ -27,7 +27,7 @@
     }
 
     &:hover,
-    &.favorite {
+    &.active {
       background-color: $color-core-content;
 
       svg {
